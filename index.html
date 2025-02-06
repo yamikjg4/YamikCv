@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yamik Gandhi - Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, #0062cc, #004085);
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+            position: relative;
+        }
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        header p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        header .btn-primary {
+            background-color: #ff7e5f;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+        }
+        header .btn-primary:hover {
+            background-color: #feb47b;
+        }
+
+        /* Navbar Section */
+        .navbar {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        .navbar-light .navbar-nav .nav-link {
+            font-size: 1.1rem;
+            padding: 10px 15px;
+            color: #333;
+        }
+        .navbar-light .navbar-nav .nav-link:hover {
+            color: #0062cc;
+            font-weight: bold;
+        }
+        .navbar-toggler-icon {
+            background-color: #ff7e5f;
+        }
+
+        /* About Section */
+        #about {
+            padding: 80px 20px;
+            text-align: center;
+        }
+        #about h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        #about p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Experience Section */
+        #experience {
+            background-color: #ffffff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        #experience h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #0062cc;
+            margin-bottom: 20px;
+        }
+        .experience-item {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .experience-item h3 {
+            font-size: 1.8rem;
+            color: #333;
+        }
+        .experience-item p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 1rem;
+        }
+        footer a {
+            color: #ff7e5f;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            header p {
+                font-size: 1.2rem;
+            }
+            #about h2 {
+                font-size: 2rem;
+            }
+            #experience h2 {
+                font-size: 2rem;
+            }
+        }
+        #spn1{
+            color: #fa3402;
+        }
+        .navbar-toggler-icon {
+    background-color: white !important;
+        }
+    .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            visibility: visible;
+        }
+
+        .loader .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            border: 0.25em solid #f3f3f3;
+            border-top: 0.25em solid #ff7e5f;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Hide loader after page load */
+        .loaded .loader {
+            visibility: hidden;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div class="spinner-border" role="status"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Yamik Gandhi</h1>
+        <p>Software Developer | .NET | JavaScript | SQL</p>
+        <a href="#about" class="btn btn-primary">Get to Know Me</a>
+    </header>
+
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#academics">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<section id="contact" class="container" style="padding: 10px;">
+   <div class="row">
+    <div class="col-md-6 col-12" style="text-align: center;">
+    <img src="/20241106_133709.jpg" alt="Yamik" style="height: 375px;width: 250px;border-radius: 25%;">
+    </div>
+    <div class="col-md-6 col-12" style="padding: 20px;">
+        <div class="contact-item p-4 bg-white shadow-sm rounded">
+            <!-- <h3 class="text-primary">Email</h3> -->
+            <p><span id="spn1">Email : </span> <a href="mailto:yamikgandhi@gmail.com">yamikgandhi@gmail.com</a></p>
+        </div>
+        <div class="contact-item p-4 bg-white shadow-sm rounded">
+            <!-- <h3 class="text-primary">LinkedIn</h3> -->
+            <p><span id="spn1">LinkedIn : </span><a href="https://www.linkedin.com/in/yamik-gandhi-44079116a/" target="_blank">https://www.linkedin.com/in/yamik-gandhi-44079116a/</a></p>
+        </div>
+        <div class="contact-item p-4 bg-white shadow-sm rounded">
+            <!-- <h3 class="text-primary">Address</h3> -->
+            <p><span id="spn1">Address : </span>Bharuch – 392001</p>
+        </div>
+        <div class="contact-item p-4 bg-white shadow-sm rounded">
+            <!-- <h3 class="text-primary">Phone Number</h3> -->
+            <p><span id="spn1">Phone Number : </span> <a href="tel:+917069976533">7069976533</a></p>
+        </div>
+    </div>
+</div>
+</section>
+    <!-- About Section -->
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>I am a software developer specializing in .NET technologies, JavaScript, and SQL. I have a strong passion for building scalable and efficient software solutions. My experience spans across various domains including web development, API design, and database management. I aim to leverage my skills to create impactful applications that solve real-world problems.</p>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="container">
+        <h2>Professional Experience</h2>
+        <div class="experience-item">
+            <h3>Senior Software Developer – LtiMindtree Ltd</h3>
+            <p><strong>Dec 2024 - Jan 2025</strong></p>
+            <p>Worked On Internal Client Product Inhencement.</p>
+        </div>
+        <div class="experience-item">
+            <h3>Software Developer – MindNerves Technology Services Pvt. Ltd</h3>
+            <p><strong>Jan 2024 - June 2024</strong></p>
+            <p>Worked on dynamic QR code generation, image processing, query optimization, and SignalR integration using Microsoft SQL Server.</p>
+        </div>
+        <div class="experience-item">
+            <h3>Software Developer – Dev Information Technology Ltd</h3>
+            <p><strong>June 2023 - Dec 2023</strong></p>
+            <p>Specialized in .NET MVC, ASP .NET Core, and MySQL. Focused on optimizing database queries and procedures.</p>
+        </div>
+        <div class="experience-item">
+            <h3>Junior Software Developer – ConvergeSole Pvt. Ltd.</h3>
+            <p><strong>Jan 2022 - May 2023</strong></p>
+            <p>Developed features for web applications using .NET MVC, ASP .NET, WCF, and SQL optimization techniques.</p>
+        </div>
+    </section>
+<!-- Projects Section -->
+<section id="projects" class="container py-5">
+    <h2 class="text-center mb-5">Projects</h2>
+    
+    <!-- E-Flyer (Web-App) -->
+    <div class="project-item mb-4 p-4 bg-white shadow-sm rounded">
+        <h3 class="text-primary">E-Flyer (Web-App)</h3>
+        <p><strong>Description:</strong> E-Commerce portal for selling any type of products online.</p>
+        <p><strong>Role:</strong></p>
+        <ul>
+            <li>Prepare System Requirement Specification documentation.</li>
+            <li>Requirement gathering for project.</li>
+            <li>Develop all functionalities of project from scratch in ASP .NET and MS-SQL Server.</li>
+            <li>Do local testing on all functionalities.</li>
+            <li>Create all types of APIs for the project.</li>
+        </ul>
+        <p><strong>Languages:</strong> .NET Core MVC | MS SQL | HTML | JavaScript | jQuery | AngularJS</p>
+        <p><strong>Technologies & Tools:</strong> Visual Studio | VS Code | MS SQL Server | Postman</p>
+    </div>
+
+    <!-- Keystone (Loan Management) -->
+    <div class="project-item mb-4 p-4 bg-white shadow-sm rounded">
+        <h3 class="text-primary">Keystone (Loan Management)</h3>
+        <p><strong>Description:</strong> This product is a vertical of Keystone Group.</p>
+        <p><strong>Role:</strong></p>
+        <ul>
+            <li>Prepare System Requirement Specification documentation.</li>
+            <li>Requirement gathering for project.</li>
+            <li>Develop all functionalities of project from scratch in ASP .NET MVC, Windows Services, and MS-SQL Server.</li>
+            <li>Do Unit Testing on all functionalities.</li>
+            <li>Create all types of APIs for the project (SMTP, Twilio, Hangfire (Cronjob)).</li>
+        </ul>
+        <p><strong>Languages:</strong> .NET MVC | MS SQL | HTML | JavaScript | jQuery</p>
+        <p><strong>Technologies & Tools:</strong> Visual Studio | MS SQL Server | Postman | ADO .NET</p>
+    </div>
+    <div class="project-item mb-4 p-4 bg-white shadow-sm rounded">
+        <h3 class="text-primary">COL(Commisonar Labour Court)</h3>
+        <p><strong>Description:</strong> This product is a vertical of Goverment.</p>
+        <p><strong>Role:</strong></p>
+        <ul>
+            <li>Prepare System Requirement Specification documentation.</li>
+            <li>Requirement gathering for project.</li>
+           <li>Do Unit Testing on all functionalities.</li>
+            <li>Develope 3 Moduel Create(Graduaty,Reinstatement,Appeal).</li>
+            <li>Create Custom Middelware(ExceptionMiddelware,APILog Middelware).</li>
+            <li>API Performance optimization</li>
+        </ul>
+        <p><strong>Languages:</strong> .NET Core MVC | My SQL | HTML | JavaScript | jQuery</p>
+        <p><strong>Technologies & Tools:</strong> Visual Studio | Mysql | Postman | DAPPER | Couchdb</p>
+    </div>
+    <div class="project-item mb-4 p-4 bg-white shadow-sm rounded">
+        <h3 class="text-primary">GSSCA(Gujarat State Seed Certificate Agency)</h3>
+        <p><strong>Description:</strong> This product is a vertical of Goverment.</p>
+        <p><strong>Role:</strong></p>
+        <ul>
+            <li>Prepare System Requirement Specification documentation.</li>
+            <li>Requirement gathering for project.</li>
+            <li>Do Unit Testing on all functionalities.</li>
+            <li>Develope CMS System.</li>
+            <li>Create Filter(ExceptionFilter,ActionFilter).</li>
+           <li>Solve Security Audit Related Bug</li>
+        </ul>
+        <p><strong>Languages:</strong> .NET MVC | MS SQL | HTML | JavaScript | jQuery</p>
+        <p><strong>Technologies & Tools:</strong> Visual Studio | MS SQL Server | Postman | Entity Framework | ADO .NET</p>
+    </div>
+    <div class="project-item mb-4 p-4 bg-white shadow-sm rounded">
+        <h3 class="text-primary">GSSCA Portal(Gujarat State Seed Certificate Agency Portal)</h3>
+        <p><strong>Description:</strong> This product is a vertical of Goverment.</p>
+        <p><strong>Role:</strong></p>
+        <ul>
+            <li>Prepare System Requirement Specification documentation.</li>
+            <li>Requirement gathering for project.</li>
+            <li>Do Unit Testing on all functionalities.</li>
+            <li>Develope CMS System.</li>
+            <li>Create Filter(ExceptionFilter,ActionFilter,Authorization Filter).</li>
+            <li>Client Meeting And Daily Based Develop new Moduel</li>
+           <!-- <li>Solve Security Audit Related Bug</li> -->
+        </ul>
+        <p><strong>Languages:</strong> .NET MVC | MS SQL | HTML | JavaScript | jQuery</p>
+        <p><strong>Technologies & Tools:</strong> Visual Studio | MS SQL Server | Postman | Entity Framework | ADO .NET</p>
+    </div>
+    <div class="project-item mb-4 p-4 bg-white shadow-sm rounded">
+        <h3 class="text-primary">GPHC(Gujarat Police Housing Board)</h3>
+        <p><strong>Description:</strong> This product is a vertical of Goverment.</p>
+        <p><strong>Role:</strong></p>
+        <ul>
+            <li>Prepare System Requirement Specification documentation.</li>
+            <li>Requirement gathering for project.</li>
+            <li>Do Unit Testing on all functionalities.</li>
+            <li>Develope CMS System.</li>
+            <li>Create Filter(ExceptionFilter,ActionFilter,Authorization Filter).</li>
+                        <li>Create UI Attractive</li>
+           <li>Solve Security Audit Related Bug</li>
+        </ul>
+        <p><strong>Languages:</strong> .NET MVC | MS SQL | HTML | JavaScript | jQuery</p>
+        <p><strong>Technologies & Tools:</strong> Visual Studio | MS SQL Server | Postman | Entity Framework | ADO .NET</p>
+    </div>
+    <div class="project-item mb-4 p-4 bg-white shadow-sm rounded">
+        <h3 class="text-primary">R&B(Road And Building)</h3>
+        <p><strong>Description:</strong> This product is a vertical of Goverment.</p>
+        <p><strong>Role:</strong></p>
+        <ul>
+            <li>Prepare System Requirement Specification documentation.</li>
+            <li>Requirement gathering for project.</li>
+            <li>Do Unit Testing on all functionalities.</li>
+            <li>Develope CMS System.</li>
+            <li>Create Filter(ExceptionFilter,ActionFilter,Authorization Filter).</li>
+            
+            <li>Create UI Attractive</li>
+           
+        </ul>
+        <p><strong>Languages:</strong> .NET MVC | MS SQL | HTML | JavaScript | jQuery</p>
+        <p><strong>Technologies & Tools:</strong> Visual Studio | MS SQL Server | Postman | Entity Framework | ADO .NET</p>
+    </div>
+    <div class="project-item mb-4 p-4 bg-white shadow-sm rounded">
+        <h3 class="text-primary">GCC(Global Closual Calendar)</h3>
+        <p><strong>Description:</strong> This product is a vertical of Goverment.</p>
+        <p><strong>Role:</strong></p>
+        <ul>
+           <li>15 Day Standup Meeting</li>    
+           <li>Create Custom Template</li>
+           <li>Upload Excel</li>
+           <li>Set Schedular At 23 O'clock this task remaing</li>
+           <li>Make Hangifire Server Intruduce Set Date Deliver Message</li>
+           <li>Generate Report</li>
+        </ul>
+        <p><strong>Languages:</strong> .NET Core MVC | MS SQL | HTML | JavaScript | jQuery</p>
+        <p><strong>Technologies & Tools:</strong> Visual Studio | MS SQL Server | Postman | Entity Framework | ADO .NET</p>
+    </div>
+</section>
+<!-- Skills Section -->
+<section id="skills" class="container py-5">
+    <h2 class="text-center mb-5">Skills</h2>
+
+    <!-- Programming Languages -->
+    <div class="skill-item mb-4 p-4 bg-white shadow-sm rounded">
+        <h3 class="text-primary">Programming Languages</h3>
+        <p><strong>C#, jQuery, JavaScript</strong></p>
+    </div>
+
+    <!-- Frameworks -->
+    <div class="skill-item mb-4 p-4 bg-white shadow-sm rounded">
+        <h3 class="text-primary">Frameworks</h3>
+        <p><strong>ASP .NET, ASP .NET MVC, ADO .NET, ASP .NET Core, Dapper, Entity Framework, Identity Framework</strong></p>
+    </div>
+
+    <!-- IDEs -->
+    <div class="skill-item mb-4 p-4 bg-white shadow-sm rounded">
+        <h3 class="text-primary">IDE</h3>
+        <p><strong>Visual Studio Code, VS Express Web, SQL Server, Visual Studio, MySQL Workbench</strong></p>
+    </div>
+
+    <!-- Databases -->
+    <div class="skill-item mb-4 p-4 bg-white shadow-sm rounded">
+        <h3 class="text-primary">Databases</h3>
+        <p><strong>MS SQL, MySQL, CouchDB</strong></p>
+    </div>
+
+    <!-- Services -->
+    <div class="skill-item mb-4 p-4 bg-white shadow-sm rounded">
+        <h3 class="text-primary">Services</h3>
+        <p><strong>WCF Services, Window Services, Microservices</strong></p>
+    </div>
+
+    <!-- API -->
+    <div class="skill-item mb-4 p-4 bg-white shadow-sm rounded">
+        <h3 class="text-primary">API</h3>
+        <p><strong>REST API (JSON Response)</strong></p>
+    </div>
+
+    <!-- Soft Skills -->
+    <div class="skill-item mb-4 p-4 bg-white shadow-sm rounded">
+        <h3 class="text-primary">Soft Skills</h3>
+        <p><strong>Time Management, Problem Solving</strong></p>
+    </div>
+</section>
+<!-- Academics & Certifications Section -->
+<section id="academics" class="container py-5">
+    <h2 class="text-center mb-5">Academics & Certifications</h2>
+
+    <!-- Master in Computer Application -->
+    <div class="education-item mb-4 p-4 bg-white shadow-sm rounded">
+        <h3 class="text-primary">Master in Computer Application</h3>
+        <p><strong>Institution:</strong> Charotar University Of Science And Technology</p>
+        <p><strong>Duration:</strong> 2020 - 2022</p>
+    </div>
+
+    <!-- Bachelor in Computer Application -->
+    <div class="education-item mb-4 p-4 bg-white shadow-sm rounded">
+        <h3 class="text-primary">Bachelor in Computer Application</h3>
+        <p><strong>Institution:</strong> Charotar University Of Science And Technology</p>
+        <p><strong>Duration:</strong> 2017 - 2020</p>
+    </div>
+
+    <!-- HSC -->
+    <div class="education-item mb-4 p-4 bg-white shadow-sm rounded">
+        <h3 class="text-primary">Higher Secondary Certificate (HSC)</h3>
+        <p><strong>Institution:</strong> Narayan Vidhyalaya</p>
+        <p><strong>Duration:</strong> 2016 - 2017</p>
+    </div>
+
+    <!-- SSC -->
+    <div class="education-item mb-4 p-4 bg-white shadow-sm rounded">
+        <h3 class="text-primary">Secondary School Certificate (SSC)</h3>
+        <p><strong>Institution:</strong> Shravan Vidhyadham</p>
+        <p><strong>Duration:</strong> 2014 - 2015</p>
+    </div>
+</section>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Yamik Gandhi. All Rights Reserved.</p>
+        <p>Designed by <a href="https://www.yamikgandhi.com" target="_blank">Yamik Gandhi</a></p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.addEventListener("load", () => {
+            document.body.classList.add("loaded");
+        });
+    </script>
+</body>
+</html>
