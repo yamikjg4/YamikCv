@@ -6,188 +6,183 @@
     <title>Yamik Gandhi - Portfolio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 0;
-        }
+ /* ========== Global Reset ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
 
-        /* Header Section */
-        header {
-            background: linear-gradient(135deg, #0062cc, #004085);
-            color: white;
-            padding: 120px 20px;
-            text-align: center;
-            position: relative;
-        }
-        header h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        header p {
-            font-size: 1.4rem;
-            margin-bottom: 30px;
-            font-weight: 500;
-        }
-        header .btn-primary {
-            background-color: #ff7e5f;
-            border: none;
-            padding: 12px 30px;
-            font-size: 1.1rem;
-            border-radius: 50px;
-            text-transform: uppercase;
-        }
-        header .btn-primary:hover {
-            background-color: #feb47b;
-        }
+/* ========== Body Styling ========== */
+body {
+    background: linear-gradient(135deg, #1c1c3c, #302b63, #24243e);
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
 
-        /* Navbar Section */
-        .navbar {
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s;
-        }
-        .navbar-light .navbar-nav .nav-link {
-            font-size: 1.1rem;
-            padding: 10px 15px;
-            color: #333;
-        }
-        .navbar-light .navbar-nav .nav-link:hover {
-            color: #0062cc;
-            font-weight: bold;
-        }
-        .navbar-toggler-icon {
-            background-color: #ff7e5f;
-        }
+/* ========== Show Page After Load ========== */
+body.loaded {
+    opacity: 1;
+}
 
-        /* About Section */
-        #about {
-            padding: 80px 20px;
-            text-align: center;
-        }
-        #about h2 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        #about p {
-            font-size: 1.2rem;
-            color: #555;
-            line-height: 1.6;
-        }
+/* ========== 3D Loader ========== */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+}
 
-        /* Experience Section */
-        #experience {
-            background-color: #ffffff;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        #experience h2 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #0062cc;
-            margin-bottom: 20px;
-        }
-        .experience-item {
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-        .experience-item h3 {
-            font-size: 1.8rem;
-            color: #333;
-        }
-        .experience-item p {
-            font-size: 1.1rem;
-            color: #555;
-        }
+.loader {
+    width: 50px;
+    height: 50px;
+    perspective: 100px;
+}
 
-        /* Footer Section */
-        footer {
-            background-color: #222;
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-            font-size: 1rem;
-        }
-        footer a {
-            color: #ff7e5f;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
+.loader div {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff7b00, #ff00ff);
+    position: absolute;
+    animation: rotate 1.5s infinite linear;
+}
 
-        /* Responsive Media Queries */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
-            header p {
-                font-size: 1.2rem;
-            }
-            #about h2 {
-                font-size: 2rem;
-            }
-            #experience h2 {
-                font-size: 2rem;
-            }
-        }
-        #spn1{
-            color: #fa3402;
-        }
-        .navbar-toggler-icon {
-    background-color: white !important;
-        }
-    .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            visibility: visible;
-        }
+@keyframes rotate {
+    0% { transform: rotateX(0deg) rotateY(0deg); }
+    50% { transform: rotateX(180deg) rotateY(0deg); }
+    100% { transform: rotateX(180deg) rotateY(180deg); }
+}
 
-        .loader .spinner-border {
-            width: 3rem;
-            height: 3rem;
-            border: 0.25em solid #f3f3f3;
-            border-top: 0.25em solid #ff7e5f;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
+/* ========== Hide Loader After Load ========== */
+.loaded .loader-container {
+    display: none;
+}
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+/* ========== Header Styling ========== */
+header {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #ff8c00, #ff0080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out 1s forwards;
+}
 
-        /* Hide loader after page load */
-        .loaded .loader {
-            visibility: hidden;
-        }
+/* ========== Flyer Container ========== */
+.flyer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out 1.5s forwards;
+}
 
+/* ========== Flyer Card ========== */
+.flyer-item {
+    background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 10px 20px rgba(255, 99, 71, 0.5);
+    width: 320px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: floatAnimation 4s infinite ease-in-out;
+}
 
+.flyer-item:hover {
+    transform: scale(1.05) rotateY(5deg);
+    box-shadow: 0 20px 40px rgba(255, 99, 71, 0.7);
+}
+
+/* ========== Floating Animation for Flyers ========== */
+@keyframes floatAnimation {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* ========== Fade-in Animation ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== Button Styling ========== */
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 10px;
+    background: linear-gradient(90deg, #ff00ff, #ff7b00);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 99, 71, 0.6);
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 25px rgba(255, 99, 71, 0.8);
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 768px) {
+    .flyer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+p {
+    color: black;
+}
+li {
+    list-style: none;
+    color: black;
+}
+#t1 {
+    color: white;
+}
     </style>
 </head>
 <body>
-    <div class="loader">
-        <div class="spinner-border" role="status"></div>
+    <div class="loader-container">
+        <div class="loader">
+            <div></div>
+        </div>
     </div>
 
     <!-- Header Section -->
     <header>
         <h1>Yamik Gandhi</h1>
-        <p>Software Developer | .NET | JavaScript | SQL | TypeScript | Angular</p>
-        <a href="#about" class="btn btn-primary">Get to Know Me</a>
+        <p id="t1">Software Developer | .NET | JavaScript | SQL | TypeScript | Angular</p>
+        <a href="#about"  style="font-size: medium;">Get to Know Me</a>
     </header>
 
     <!-- Navbar Section -->
@@ -208,35 +203,36 @@
             </div>
         </div>
     </nav>
-<section id="contact" class="container" style="padding: 10px;">
-   <div class="row">
-    <!-- <div class="col-md-6 col-12" style="text-align: center;">
-    <img src="https://github.com/yamikjg4/YamikCv/blob/main/20241106_133709.jpg" alt="Yamik" style="height: 375px;width: 250px;border-radius: 25%;">
-    </div> -->
-    <div class="col-12" style="padding: 20px;">
-        <div class="contact-item p-4 bg-white shadow-sm rounded">
-            <!-- <h3 class="text-primary">Email</h3> -->
-            <p><span id="spn1">Email : </span> <a href="mailto:yamikgandhi@gmail.com">yamikgandhi@gmail.com</a></p>
+    <section id="contact" class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="contact-item d-flex align-items-center p-4 bg-white shadow rounded mb-3">
+                    <i class="fas fa-envelope text-primary fa-2x me-3"></i>
+                    <p class="mb-0"><strong>Email:</strong> <a href="mailto:yamikgandhi@gmail.com" class="text-decoration-none text-dark">yamikgandhi@gmail.com</a></p>
+                </div>
+                <div class="contact-item d-flex align-items-center p-4 bg-white shadow rounded mb-3">
+                    <i class="fab fa-linkedin text-primary fa-2x me-3"></i>
+                    <p class="mb-0"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/yamik-gandhi-44079116a/" target="_blank" class="text-decoration-none text-dark">LinkedIn Profile</a></p>
+                </div>
+                <div class="contact-item d-flex align-items-center p-4 bg-white shadow rounded mb-3">
+                    <i class="fas fa-map-marker-alt text-danger fa-2x me-3"></i>
+                    <p class="mb-0"><strong>Address:</strong> Bharuch – 392001</p>
+                </div>
+                <div class="contact-item d-flex align-items-center p-4 bg-white shadow rounded">
+                    <i class="fas fa-phone-alt text-success fa-2x me-3"></i>
+                    <p class="mb-0"><strong>Phone:</strong> <a href="tel:+917069976533" class="text-decoration-none text-dark">7069976533</a></p>
+                </div>
+            </div>
         </div>
-        <div class="contact-item p-4 bg-white shadow-sm rounded">
-            <!-- <h3 class="text-primary">LinkedIn</h3> -->
-            <p><span id="spn1">LinkedIn : </span><a href="https://www.linkedin.com/in/yamik-gandhi-44079116a/" target="_blank">https://www.linkedin.com/in/yamik-gandhi-44079116a/</a></p>
-        </div>
-        <div class="contact-item p-4 bg-white shadow-sm rounded">
-            <!-- <h3 class="text-primary">Address</h3> -->
-            <p><span id="spn1">Address : </span>Bharuch – 392001</p>
-        </div>
-        <div class="contact-item p-4 bg-white shadow-sm rounded">
-            <!-- <h3 class="text-primary">Phone Number</h3> -->
-            <p><span id="spn1">Phone Number : </span> <a href="tel:+917069976533">7069976533</a></p>
-        </div>
-    </div>
-</div>
-</section>
+    </section>
+    
+    <!-- Include FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    
     <!-- About Section -->
     <section id="about" class="container">
         <h2>About Me</h2>
-        <p>I am a software developer specializing in .NET technologies, JavaScript, and SQL. I have a strong passion for building scalable and efficient software solutions. My experience spans across various domains including web development, API design, and database management. I aim to leverage my skills to create impactful applications that solve real-world problems.</p>
+        <p id="t1">I am a software developer specializing in .NET technologies, JavaScript, and SQL. I have a strong passion for building scalable and efficient software solutions. My experience spans across various domains including web development, API design, and database management. I aim to leverage my skills to create impactful applications that solve real-world problems.</p>
     </section>
 
     <!-- Experience Section -->
@@ -244,23 +240,23 @@
         <h2>Professional Experience</h2>
         <div class="experience-item">
             <h3>Senior Software Developer – LtiMindtree Ltd</h3>
-            <p><strong>Dec 2024 - Jan 2025</strong></p>
-            <p>Worked On Internal Client Product Inhencement.</p>
+            <p id="t1"><strong>Dec 2024 - Jan 2025</strong></p>
+            <p id="t1">Worked On Internal Client Product Inhencement.</p>
         </div>
         <div class="experience-item">
             <h3>Software Developer – MindNerves Technology Services Pvt. Ltd</h3>
-            <p><strong>Jan 2024 - June 2024</strong></p>
-            <p>Worked on dynamic QR code generation, image processing, query optimization, and SignalR integration using Microsoft SQL Server.</p>
+            <p id="t1"><strong>Jan 2024 - June 2024</strong></p>
+            <p id="t1">Worked on dynamic QR code generation, image processing, query optimization, and SignalR integration using Microsoft SQL Server.</p>
         </div>
         <div class="experience-item">
             <h3>Software Developer – Dev Information Technology Ltd</h3>
-            <p><strong>June 2023 - Dec 2023</strong></p>
-            <p>Specialized in .NET MVC, ASP .NET Core, and MySQL. Focused on optimizing database queries and procedures.</p>
+            <p id="t1"><strong>June 2023 - Dec 2023</strong></p>
+            <p id="t1">Specialized in .NET MVC, ASP .NET Core, and MySQL. Focused on optimizing database queries and procedures.</p>
         </div>
         <div class="experience-item">
             <h3>Junior Software Developer – ConvergeSole Pvt. Ltd.</h3>
-            <p><strong>Jan 2022 - May 2023</strong></p>
-            <p>Developed features for web applications using .NET MVC, ASP .NET, WCF, and SQL optimization techniques.</p>
+            <p id="t1"><strong>Jan 2022 - May 2023</strong></p>
+            <p id="t1">Developed features for web applications using .NET MVC, ASP .NET, WCF, and SQL optimization techniques.</p>
         </div>
     </section>
 <!-- Projects Section -->
@@ -475,16 +471,33 @@
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 Yamik Gandhi. All Rights Reserved.</p>
-        <p>Designed by <a href="https://www.yamikgandhi.com" target="_blank">Yamik Gandhi</a></p>
+        <p id="t1">&copy; 2024 Yamik Gandhi. All Rights Reserved.</p>
+        <p id="t1">Designed by <a href="https://www.yamikgandhi.com" target="_blank">Yamik Gandhi</a></p>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        window.addEventListener("load", () => {
-            document.body.classList.add("loaded");
+      document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(() => {
+        document.body.classList.add("loaded");
+    }, 2000); // Simulated loader duration (2 seconds)
+
+    // 3D Animation Effect on Flyers
+    const flyers = document.querySelectorAll(".flyer-item");
+    flyers.forEach(flyer => {
+        flyer.addEventListener("mousemove", (e) => {
+            let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            let yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            flyer.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
         });
+
+        flyer.addEventListener("mouseleave", () => {
+            flyer.style.transform = "rotateY(0deg) rotateX(0deg)";
+        });
+    });
+});
+
     </script>
 </body>
 </html>
